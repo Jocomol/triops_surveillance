@@ -42,6 +42,4 @@ class Thermo(W1ThermSensor):
             bashCommand = "hueadm light 2 " + color + " bri=255"
             process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
             output, error = process.communicate()
-            print("output: " + output)
-            print("error: " + error)
         return meassuered_data
