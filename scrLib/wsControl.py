@@ -13,7 +13,7 @@ class Controller():  # Controlls everything and manages the weatherstation
         self.db_connector = DBConnector()
 
     def main(self):  # Calls all methods and writes results into the database
-        data_array = self.thermo.read_measurement(len(sys.argv) >= 2 && sys.argv[1]=="-l")
+        data_array = self.thermo.read_measurement(len(sys.argv) >= 2 and sys.argv[1]=="-l")
         self.db_connector.database_insert_measurement(data_array)
 
 

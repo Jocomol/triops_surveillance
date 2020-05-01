@@ -27,11 +27,11 @@ class Thermo(W1ThermSensor):
             ## TODO
             if measurement_temps[0] < 23:
                 color = "blue"
-            elif measurement_temps[0] > 23 && measurement_temps[0] <= 24:
+            elif measurement_temps[0] > 23 and measurement_temps[0] <= 24:
                 color = "aqua"
-            elif measurement_temps[0] > 24 && measurement_temps[0] <= 26:
+            elif measurement_temps[0] > 24 and measurement_temps[0] <= 26:
                 color="green"
-            elif measurement_temps[0] > 26 && measurement_temps[0] <= 27:
+            elif measurement_temps[0] > 26 and measurement_temps[0] <= 27:
                 color="orange"
             elif measurement_temps[0] > 27:
                 color="red"
