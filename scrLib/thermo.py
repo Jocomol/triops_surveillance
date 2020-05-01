@@ -25,15 +25,15 @@ class Thermo(W1ThermSensor):
         meassuered_data.append(meassuered_temps[2])
         if lamps:
             ## TODO
-            if measurement_temps[0] < 23:
+            if meassuered_temps[0] < 23:
                 color = "blue"
-            elif measurement_temps[0] > 23 and measurement_temps[0] <= 24:
+            elif meassuered_temps[0] > 23 and meassuered_temps[0] <= 24:
                 color = "aqua"
-            elif measurement_temps[0] > 24 and measurement_temps[0] <= 26:
+            elif meassuered_temps[0] > 24 and meassuered_temps[0] <= 26:
                 color="green"
-            elif measurement_temps[0] > 26 and measurement_temps[0] <= 27:
+            elif meassuered_temps[0] > 26 and meassuered_temps[0] <= 27:
                 color="orange"
-            elif measurement_temps[0] > 27:
+            elif meassuered_temps[0] > 27:
                 color="red"
             else:
                 color="purple"
