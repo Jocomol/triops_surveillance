@@ -19,6 +19,7 @@ modprobe wire
 modprobe w1-gpio
 modprobe w1-therm
 echo "wire" >> /etc/modules
+
 echo "w1-gpio" >> /etc/modules
 echo "w1-therm" >> /etc/modules
 echo "#1-Wire ds1820" >> /boot/config.txt

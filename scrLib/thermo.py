@@ -7,13 +7,9 @@ import datetime
 class Thermo(W1ThermSensor):
 
     def __init__(self):
-        W1ThermSensor.__init__(
-            self,
-            W1ThermSensor.THERM_SENSOR_DS18B20,
-            "00000833e8ff")  # TODO
+        W1ThermSensor.__init__(self)  # TODO
 
     def read_measurement(self):
-        self.logger.info("Meassuring started")
         meassuered_data = [str(datetime.datetime.now().isoformat())]
         meassuered_temps = (self.get_temperatures([
             self.DEGREES_C,
