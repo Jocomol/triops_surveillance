@@ -1,7 +1,6 @@
 # Imports
 from thermo import Thermo
 from dbConnector import DBConnector
-from wsPart import WsPart
 import pytemperature
 import logging
 

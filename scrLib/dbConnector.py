@@ -1,5 +1,4 @@
 import sqlite3
-from wsPart import WsPart
 
 
 class DBConnector():  # Writes into the database very simple

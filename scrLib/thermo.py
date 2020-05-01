@@ -1,4 +1,3 @@
-from wsPart import WsPart
 import os
 import sys
 from w1thermsensor import W1ThermSensor
