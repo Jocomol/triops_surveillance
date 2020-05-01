@@ -9,10 +9,7 @@
   apt install python3 python3-pip -y
   #data0.
   apt install sqlite3 -y
-  # Web
-  apt install apache2 -y
-  #system
-  apt install tree figlet -y
+
   echo "Software installed"
 
 #configuring hardware
