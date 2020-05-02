@@ -25,6 +25,7 @@ class Controller():  # Starts eveything
             message = "Das Triopsgehege ist zwischen 23 und 24 Grad, bitte die Lampe näherrücken."
         elif data_array[1] > 24 and data_array[1] <= 26:
             color = "green"
+            message = "all ok"
         elif data_array[1] > 26 and data_array[1] <= 27:
             color = "orange"
             message = "Das Triopsgehege ist zwischen 26 und 27 Grad, bitte die Lampe wegrücken."
