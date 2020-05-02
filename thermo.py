@@ -11,7 +11,7 @@ class Thermo(W1ThermSensor):
             W1ThermSensor.THERM_SENSOR_DS18B20,
             "00000833e8ff")
 
-    def read_measurement(self, lamps):
+    def read_measurement(self):
         meassuered_data = [str(datetime.datetime.now().isoformat())]
         meassuered_temps = (self.get_temperatures([
             self.DEGREES_C,
