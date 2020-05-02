@@ -42,7 +42,7 @@ class Controller():  # Starts eveything
             process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
             output, error = process.communicate()
 
-        if color != "green":
+        if color != "purple":
             self.pushoverSender.send_notification(message)
         print(color)
         print(message)

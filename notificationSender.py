@@ -10,5 +10,5 @@ class PushoverSender:
     def send_notification(self, text):
         conn = http.client.HTTPSConnection("api.pushover.net:443")
         post_data = {'user': self.user_key, 'token': self.api_key, 'message': text}
-        conn.request("POST", "/1/messages.json",
-                    urllib.parse.urlencode(post_data), {"Content-type": "application/x-www-form-urlencoded"})
+        conn.request("POST", "/1/messages.json",urllib.parse.urlencode(post_data), {"Content-type": "application/x-www-form-urlencoded"})
+        print(conn.getresponse().read())
