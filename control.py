@@ -2,6 +2,7 @@
 from thermo import Thermo
 from dbConnector import DBConnector
 from notificationSender import PushoverSender
+import subprocess
 import sys
 
 
