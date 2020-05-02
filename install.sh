@@ -2,15 +2,10 @@
 #Author: Joe Meier a.k.a Jocomol
 #Contact: joelmeier08@gmail.com
 
-
-  apt update
-  apt dist-upgrade -y
-  #scrLib
-  apt install python3 python3-pip -y
-  #data0.
-  apt install sqlite3 -y
-
-  echo "Software installed"
+apt update
+apt dist-upgrade -y
+apt install python3 python3-pip sqlite3 neofetch figlet -y
+echo "Software installed"
 
 #configuring hardware
 #ds1820 (Thermometer)
@@ -25,11 +20,9 @@ echo "w1-therm" >> /etc/modules
 echo "#1-Wire ds1820" >> /boot/config.txt
 echo "dtoverlay=w1-gpio,gpiopin=4" >> /boot/config.txt
 
-#configuring software
 #Database
 
 #scrLib
 pip3 install -r requirements.txt
-
 
 echo "triops" > /etc/hostname

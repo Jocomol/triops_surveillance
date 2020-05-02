@@ -3,7 +3,7 @@ import sqlite3
 
 class DBConnector():  # Writes into the database very simple
 
-    # Inserts the mmeasurement data into the database
+    # Inserts the measurement data into the database
     def database_insert_measurement(self, measurement):
         connection = sqlite3.connect('/home/pi/triops.db')
         cursor = connection.cursor()

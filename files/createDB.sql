@@ -19,8 +19,3 @@ time_updateInterval_day REAL,
 time_updateInterval_hour REAL,
 time_updateInterval_minute REAL
 );
-
-/*
-IDEAS:
-1: Hardware Info (Name, Manufacturer etc. )
-*/
