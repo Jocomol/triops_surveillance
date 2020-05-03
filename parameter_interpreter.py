@@ -1,10 +1,10 @@
 class ParameterInterpreter():
 
-    def __init__():
+    def __init__(self):
         self.lights = False
         self.silent = False
 
-    def interpret(arguments):
+    def interpret(self, arguments):
         for argument in arguments:
             if argument == "-l":
                 self.lights = True
