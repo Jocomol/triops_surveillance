@@ -19,7 +19,7 @@ class Controller():  # Starts eveything
     def main(self):  # Calls all methods and writes results into the database
         data_array = self.thermo.read_measurement()
         self.db_connector.database_insert_measurement(data_array)
-
+        self.parameterInterpreter.interpret()
         if data_array[1] < 23:
             color = "blue"
             message = "Das Triopsgehege ist unter 23 Grad, sofort die Lampe näherrücken."

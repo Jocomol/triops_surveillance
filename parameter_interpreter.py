@@ -1,7 +1,8 @@
 class ParameterInterpreter():
 
-    self.lights = False
-    self.silent = False
+    def __init__():
+        self.lights = False
+        self.silent = False
 
     def interpret(arguments):
         for argument in arguments:
