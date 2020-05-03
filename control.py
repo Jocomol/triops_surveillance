@@ -39,12 +39,17 @@ class Controller():  # Starts eveything
             color = "purple"
             message = "Beim Messen gab es einen Fehler, bitte nachprüfen."
 
-        print("")
-        print("---")
-        print("Farbe: " + color)
-        print("Message: " + message)
-        print("Temperatur: " + str(data_array[1]))
-        print("---")
+        if self.parameterInterpreter.temperatur:
+            print(data_array[1])
+        elif self.parameterInterpreter.short:
+            print(str(data_array[1]) + "°C")
+        else:
+            print("")
+            print("---")
+            print("Farbe: " + color)
+            print("Message: " + message)
+            print("Temperatur: " + str(data_array[1]) + "°C")
+            print("---")
 
         if self.parameterInterpreter.message:
             if color != "green":
