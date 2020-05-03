@@ -2,13 +2,13 @@ class ParameterInterpreter():
 
     def __init__(self):
         self.lights = False
-        self.silent = False
+        self.message = False
 
     def interpret(self, arguments):
         for argument in arguments:
             if argument == "-l":
                 self.lights = True
             elif argument == "-m":
-                self.silent = True
+                self.message = True
             else:
                 pass

@@ -46,11 +46,11 @@ class Controller():  # Starts eveything
         print("Temperatur: " + str(data_array[1]))
         print("---")
 
-        if parameterInterpreter.message:
+        if self.parameterInterpreter.message:
             if color != "green":
                 self.pushoverSender.send_notification(message)
 
-        if parameterInterpreter.lights:
+        if self.parameterInterpreter.lights:
             bashCommand = "hueadm light 2 " + color + " bri=255"
             process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
             output, error = process.communicate()
