@@ -39,7 +39,7 @@ class Controller():  # Starts eveything
             color = "purple"
             message = "Beim Messen gab es einen Fehler, bitte nachprüfen."
 
-        if self.parameterInterpreter.temperatur:
+        if self.parameterInterpreter.temperature:
             print(data_array[1])
         elif self.parameterInterpreter.short:
             print(str(data_array[1]) + "°C")
