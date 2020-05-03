@@ -2,6 +2,7 @@
 from thermo import Thermo
 from dbConnector import DBConnector
 from notificationSender import PushoverSender
+from parameter_interpreter import ParameterInterpreter
 import subprocess
 import sys
 
@@ -12,6 +13,7 @@ class Controller():  # Starts eveything
         self.name = "Controller"
         self.thermo = Thermo()
         self.db_connector = DBConnector()
+        self.parameterInterpreter = ParameterInterpreter()
         self.pushoverSender = PushoverSender("umudoepm93f2g8c5489aig8tr2i31c","ayzgokayp6qypch2qw6es4pc2usjto")
 
     def main(self):  # Calls all methods and writes results into the database
@@ -37,16 +39,22 @@ class Controller():  # Starts eveything
             color = "purple"
             message = "Beim Messen gab es einen Fehler, bitte nachprüfen."
 
-        if len(sys.argv) >= 2 and sys.argv[1] == "-l":
+        print("")
+        print("---")
+        print("Farbe: " + color)
+        print("Message: " + message)
+        print("Temperatur: " + data_array[1])
+        print("---")
+
+        if parameterInterpreter.message:
+            if color != "green":
+                self.pushoverSender.send_notification(message)
+
+        if parameterInterpreter.lights:
             bashCommand = "hueadm light 2 " + color + " bri=255"
             process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
             output, error = process.communicate()
 
-        if color != "green":
-            self.pushoverSender.send_notification(message)
-        print(color)
-        print(message)
-        print(data_array[1])
 if __name__ == "__main__":
     controller = Controller()
     controller.main()
