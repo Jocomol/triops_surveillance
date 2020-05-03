@@ -43,7 +43,7 @@ class Controller():  # Starts eveything
         print("---")
         print("Farbe: " + color)
         print("Message: " + message)
-        print("Temperatur: " + data_array[1])
+        print("Temperatur: " + str(data_array[1]))
         print("---")
 
         if parameterInterpreter.message:
