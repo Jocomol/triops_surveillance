@@ -30,7 +30,7 @@ ax.yaxis.set_ticks_position('left')
 plt.minorticks_on()
 
 # Zeichnen
-plt.plot(x, y, label='Aufgabe A')
+plt.plot(x, y, label='Gemessene Temperatur')
 
 # Styling
 plt.title('Triops Temperatur')
