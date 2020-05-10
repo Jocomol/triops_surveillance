@@ -14,7 +14,7 @@ class Controller():  # Starts eveything
         self.thermo = Thermo()
         self.db_connector = DBConnector()
         self.parameterInterpreter = ParameterInterpreter()
-        self.bot = bot(token='1263907628:AAGJsEeBJmOKzbR3xYuuDolNPXXbsbYyWhY')
+        self.bot = Bot(token='1263907628:AAGJsEeBJmOKzbR3xYuuDolNPXXbsbYyWhY')
         self.chat_id = chat_id = bot.get_updates()[-1].message.chat_id
 
     def main(self):  # Calls all methods and writes results into the database
