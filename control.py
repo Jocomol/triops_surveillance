@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 from thermo import Thermo
 from dbConnector import DBConnector
-from notificationSender import PushoverSender
 from parameter_interpreter import ParameterInterpreter
+import telegram
 import subprocess
 import sys
 
@@ -14,7 +14,8 @@ class Controller():  # Starts eveything
         self.thermo = Thermo()
         self.db_connector = DBConnector()
         self.parameterInterpreter = ParameterInterpreter()
-        self.pushoverSender = PushoverSender("umudoepm93f2g8c5489aig8tr2i31c","ayzgokayp6qypch2qw6es4pc2usjto")
+        self.bot = bot(token='1263907628:AAGJsEeBJmOKzbR3xYuuDolNPXXbsbYyWhY')
+        self.chat_id = chat_id = bot.get_updates()[-1].message.chat_id
 
     def main(self):  # Calls all methods and writes results into the database
         data_array = self.thermo.read_measurement()
@@ -53,7 +54,12 @@ class Controller():  # Starts eveything
 
         if self.parameterInterpreter.message:
             if color != "green":
-                self.pushoverSender.send_notification(message)
+                self.bot.send_message(chat_id=self.chat_id, text=message)
+            elif self.parameterInterpreter.debug:
+                message = "Debug test: " + str(data_array[1])
+                self.bot.send_message(chat_id=self.chat_id, text=message)
+
+
 
         if self.parameterInterpreter.lights:
             bashCommand = "hueadm light 2 " + color + " bri=255"
