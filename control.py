@@ -15,7 +15,7 @@ class Controller():  # Starts eveything
         self.db_connector = DBConnector()
         self.parameterInterpreter = ParameterInterpreter()
         self.bot = telegram.Bot('1263907628:AAGJsEeBJmOKzbR3xYuuDolNPXXbsbYyWhY')
-        self.chat_id = bot.get_updates()[-1].message.chat_id
+        self.chat_id = self.bot.get_updates()[-1].message.chat_id
 
     def main(self):  # Calls all methods and writes results into the database
         data_array = self.thermo.read_measurement()
