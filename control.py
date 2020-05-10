@@ -2,7 +2,7 @@
 from thermo import Thermo
 from dbConnector import DBConnector
 from parameter_interpreter import ParameterInterpreter
-import telegram
+import telegram.ext
 import subprocess
 import sys
 
