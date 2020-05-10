@@ -60,9 +60,10 @@ class Controller():  # Starts eveything
                 self.bot.send_message(chat_id=self.chat_id, text=message)
 
         if self.parameterInterpreter.lights:
-            bashCommand = "hueadm light 2 " + color + " bri=255"
-            process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-            output, error = process.communicate()
+            if color != "green":
+                bashCommand = "hueadm light 2 " + color + " bri=255"
+                process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+                output, error = process.communicate()
 
 if __name__ == "__main__":
     controller = Controller()
