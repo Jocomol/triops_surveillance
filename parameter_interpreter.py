@@ -17,7 +17,7 @@ class ParameterInterpreter():
                 self.short = True
             elif argument == "-t":
                 self.temperature = True
-            elif argument == "-d"
+            elif argument == "-d":
                 self.debug = True
 
             else:
