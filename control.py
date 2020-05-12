@@ -21,21 +21,21 @@ class Controller():  # Starts eveything
         data_array = self.thermo.read_measurement()
         self.db_connector.database_insert_measurement(data_array)
         self.parameterInterpreter.interpret(sys.argv)
-        if data_array[1] < 23:
+        if data_array[1] < 20:
             color = "blue"
-            message = "Das Triopsgehege ist unter 23 Grad, sofort die Lampe näherrücken."
-        elif data_array[1] > 23 and data_array[1] <= 24:
+            message = "Das Triopsgehege ist unter 20 Grad, sofort die Lampe näherrücken."
+        elif data_array[1] > 20 and data_array[1] <= 21:
             color = "aqua"
-            message = "Das Triopsgehege ist zwischen 23 und 24 Grad, bitte die Lampe näherrücken."
-        elif data_array[1] > 24 and data_array[1] <= 26:
+            message = "Das Triopsgehege ist zwischen 20 und 21 Grad, bitte die Lampe näherrücken."
+        elif data_array[1] > 21 and data_array[1] <= 24:
             color = "green"
             message = "all ok"
-        elif data_array[1] > 26 and data_array[1] <= 27:
+        elif data_array[1] > 24 and data_array[1] <= 25:
             color = "orange"
-            message = "Das Triopsgehege ist zwischen 26 und 27 Grad, bitte die Lampe wegrücken."
-        elif data_array[1] > 27:
+            message = "Das Triopsgehege ist zwischen 24 und 25 Grad, bitte die Lampe wegrücken."
+        elif data_array[1] > 25:
             color = "red"
-            message = "Das Triopsgehege ist über 27 Grad, sofort die Lampe wegrücken."
+            message = "Das Triopsgehege ist über 25 Grad, sofort die Lampe wegrücken."
         else:
             color = "purple"
             message = "Beim Messen gab es einen Fehler, bitte nachprüfen."
