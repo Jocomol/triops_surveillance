@@ -14,11 +14,11 @@ class Controller():  # Starts eveything
         self.thermo = Thermo()
         self.db_connector = DBConnector()
         self.parameterInterpreter = ParameterInterpreter()
-        self.bot = telegram.Bot('1263907628:AAGJsEeBJmOKzbR3xYuuDolNPXXbsbYyWhY')
-        try:
-            self.chat_id = self.bot.get_updates()[-1].message.chat_id
-        except IndexError:
-            self.chat_id = None
+        #self.bot = telegram.Bot('1263907628:AAGJsEeBJmOKzbR3xYuuDolNPXXbsbYyWhY')
+        #try:
+        #    self.chat_id = self.bot.get_updates()[-1].message.chat_id
+        #except IndexError:
+        #    self.chat_id = None
 
 
     def main(self):  # Calls all methods and writes results into the database
@@ -27,19 +27,19 @@ class Controller():  # Starts eveything
         self.parameterInterpreter.interpret(sys.argv)
         if data_array[1] < 20:
             color = "blue"
-            message = "Das Triopsgehege ist unter 20 Grad, sofort die Lampe näherrücken."
+            message = "Das Triopsgehege ist unter 20 Grad, sofort die Lampe näherrcken."
         elif data_array[1] > 20 and data_array[1] <= 21:
             color = "aqua"
-            message = "Das Triopsgehege ist zwischen 20 und 21 Grad, bitte die Lampe näherrücken."
+            message = "Das Triopsgehege ist zwischen 20 und 21 Grad, bitte die Lampe nherrücken."
         elif data_array[1] > 21 and data_array[1] <= 24:
             color = "green"
             message = "all ok"
         elif data_array[1] > 24 and data_array[1] <= 25:
             color = "orange"
-            message = "Das Triopsgehege ist zwischen 24 und 25 Grad, bitte die Lampe wegrücken."
+            message = "Das Triopsgehege ist zwischen 24 und 25 Grad, bitte die Lampe wegruecken."
         elif data_array[1] > 25:
             color = "red"
-            message = "Das Triopsgehege ist über 25 Grad, sofort die Lampe wegrücken."
+            message = "Das Triopsgehege ist ueber 25 Grad, sofort die Lampe wegrücken."
         else:
             color = "purple"
             message = "Beim Messen gab es einen Fehler, bitte nachprüfen."
@@ -56,12 +56,12 @@ class Controller():  # Starts eveything
             print("Temperatur: " + str(data_array[1]) + "°C")
             print("---")
 
-        if self.parameterInterpreter.message:
-            if color != "green":
-                self.bot.send_message(chat_id=self.chat_id, text=message)
-            elif self.parameterInterpreter.debug:
-                message = "Debug test: " + str(data_array[1])
-                self.bot.send_message(chat_id=self.chat_id, text=message)
+        #if self.parameterInterpreter.message:
+        #    if color != "green":
+        #        self.bot.send_message(chat_id=self.chat_id, text=message)
+        #    elif self.parameterInterpreter.debug:
+        #        message = "Debug test: " + str(data_array[1])
+        #        self.bot.send_message(chat_id=self.chat_id, text=message)
 
         if self.parameterInterpreter.lights:
             if color != "green":
